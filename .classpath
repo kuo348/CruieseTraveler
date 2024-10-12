@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry kind="lib" path="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-manifest.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache CXF">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mssql Jdbc">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi/poi-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml/poi-ooxml-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-full/poi-ooxml-full-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-excelant/poi-excelant-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-scratchpad/poi-scratchpad-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-lite-agent/poi-ooxml-lite-agent-5.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/commons-io-2.17.0/commons-io-2.17.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-core-2.24.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-1.2-api-2.24.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-api-2.24.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

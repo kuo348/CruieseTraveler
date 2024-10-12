@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="CruieseTraveler">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="21"/>
+    <property name="source" value="21"/>
+    <property name="dir.workspace" value="/Users/cooper/eclipse-workspace/CruieseTraveler"/>   	
+    <!--
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    -->
+    <!--
+    <property name="java.home" value="../../../../usr/local/Cellar/openjdk/23/libexec"/>
+    -->
+    <path id="Mssql Jdbc.userclasspath">
+        <pathelement location="../../../../usr/local/Cellar/sqljdbc_12.8/cht/jars/mssql-jdbc-12.8.1.jre8.jar"/>
+    </path>
+  <!--
+    <path id="Apache CXF.bootclasspath">
+       <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/jar"/>
+    </path>
+    -->
+    <path id="CruieseTraveler.classpath">
+        <pathelement location="${dir.buildfile}/bin"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-manifest.jar"/>
+        <path refid="Mssql Jdbc.userclasspath"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi/poi-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml/poi-ooxml-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-full/poi-ooxml-full-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-excelant/poi-excelant-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-scratchpad/poi-scratchpad-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-lite-agent/poi-ooxml-lite-agent-5.3.0.jar"/>
+        <pathelement location="../../Downloads/commons-io-2.17.0/commons-io-2.17.0.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-core-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-1.2-api-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-api-2.24.1.jar"/>
+    </path>
+    <path id="run.CruieseTraveler.classpath">
+        <path refid="CruieseTraveler.classpath"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-common-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/velocity-engine-core-2.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-lang3-3.14.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wsdl4j-1.6.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-xjc-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-core-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/txw2-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-runtime-4.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xsom-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/relaxng-datatype-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/codemodel-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/rngom-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/dtd-parser-1.4.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-tools-3.0.12.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-runtime-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/woodstox-core-6.6.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/stax2-api-4.2.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-validator-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xmlschema-core-2.3.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-wsdl-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-misctools-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-databinding-jaxb-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-corba-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/antlr-2.7.7.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jacorb-omgapi-3.9.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-jaxws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xml-resolver-1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-text-1.10.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-javascript-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wadlto-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-service-description-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-java2ws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-dv-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.annotation-api-2.1.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.activation-api-2.1.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-ts-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-bug671-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-boolean-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-javadoc-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-runtime-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/angus-activation-2.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-features-clustering-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-management-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-local-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-jetty-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-server-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-jakarta-servlet-api-5.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-util-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-io-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-security-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-http-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-api-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-hc-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-nio-4.4.16.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-4.4.16.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpasyncclient-4.1.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpclient-4.5.14.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-codec-1.17.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-server-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-common-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-buffer-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-resolver-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-unix-common-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.servlet-api-5.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-client-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-http2-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-udp-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/mina-core-2.2.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-jdk14-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jcl-over-slf4j-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-jms-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jms-api-3.1.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.transaction-api-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-soap-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-jaxb-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-xml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-corba-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-coloc-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-aegis-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-providers-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-search-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-cors-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-oauth2-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-client-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-xml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-saml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-dom-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-common-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xmlsec-3.0.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-core-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-profile-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-soap-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/metrics-core-4.2.26.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/java-support-8.4.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cryptacular-1.2.6.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/guava-32.1.2-jre.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/failureaccess-1.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jasypt-1.9.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-addr-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-rm-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-policy-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/neethi-3.2.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-mex-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-security-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/ehcache-3.10.8-jakarta.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cache-api-1.1.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-policy-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-stax-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-bindings-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/saaj-impl-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/stax-ex-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-policy-stax-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-js-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/rhino-1.7.15.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-simple-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/angus-mail-1.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.mail-api-2.1.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.ws.rs-api-3.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-javascript-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-sts-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-json-basic-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-api-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-server-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-core-client-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jgroups-5.3.0.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-epoll-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-kqueue-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-proxy-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-socks-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-client-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-selector-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-server-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/caffeine-3.1.6.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jdbc-store-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-dbcp2-2.7.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-pool2-2.7.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-quorum-api-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jctools-core-2.1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-beanutils-1.9.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-logging-1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-configuration2-2.9.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-collections-3.2.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-core-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-commons-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-observation-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-journal-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/activemq-artemis-native-2.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-commons-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-service-extensions-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-api-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-service-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jettison-1.5.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/asm-9.7.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/FastInfoset-2.1.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.ws-api-3.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.bind-api-3.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jws-api-3.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.soap-api-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-manifest.jar"/>
+        <path refid="Mssql Jdbc.userclasspath"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi/poi-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml/poi-ooxml-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-full/poi-ooxml-full-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-excelant/poi-excelant-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-scratchpad/poi-scratchpad-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-lite-agent/poi-ooxml-lite-agent-5.3.0.jar"/>
+        <pathelement location="../../Downloads/commons-io-2.17.0/commons-io-2.17.0.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-core-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-1.2-api-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-api-2.24.1.jar"/>
+    </path>
+   <!--
+    <path id="run.CruieseTraveler (1).classpath">
+        <path refid="CruieseTraveler.classpath"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-common-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/velocity-engine-core-2.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-lang3-3.14.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wsdl4j-1.6.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-xjc-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-core-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/txw2-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-runtime-4.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xsom-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/relaxng-datatype-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/codemodel-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/rngom-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/dtd-parser-1.4.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-tools-3.0.12.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-runtime-3.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/woodstox-core-6.6.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/stax2-api-4.2.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-validator-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xmlschema-core-2.3.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-wsdl-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-misctools-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-databinding-jaxb-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-corba-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/antlr-2.7.7.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jacorb-omgapi-3.9.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-jaxws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xml-resolver-1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-text-1.10.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-javascript-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wadlto-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-service-description-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-java2ws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-dv-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.annotation-api-2.1.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.activation-api-2.1.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-ts-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-bug671-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-boolean-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-javadoc-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-runtime-4.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/angus-activation-2.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-features-clustering-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-management-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-local-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-jetty-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-server-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-jakarta-servlet-api-5.0.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-util-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-io-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-security-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-http-11.0.22.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-api-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-hc-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-nio-4.4.16.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-4.4.16.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpasyncclient-4.1.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/httpclient-4.5.14.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-codec-1.17.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-server-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-common-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-buffer-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-resolver-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-unix-common-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.servlet-api-5.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-client-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-http2-4.1.111.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-udp-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/mina-core-2.2.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-jdk14-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jcl-over-slf4j-2.0.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-jms-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jms-api-3.1.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.transaction-api-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-soap-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-jaxb-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-xml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-corba-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-coloc-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-aegis-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-providers-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-search-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-cors-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-oauth2-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-client-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-xml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-saml-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-dom-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-common-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/xmlsec-3.0.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-core-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-profile-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-soap-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/metrics-core-4.2.26.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/java-support-8.4.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cryptacular-1.2.6.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/guava-32.1.2-jre.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/failureaccess-1.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-impl-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-api-4.3.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jasypt-1.9.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-addr-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-rm-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-policy-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/neethi-3.2.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-mex-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-security-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/ehcache-3.10.8-jakarta.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cache-api-1.1.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-policy-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-stax-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-bindings-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/saaj-impl-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/stax-ex-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-policy-stax-3.0.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxws-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-js-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/rhino-1.7.15.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-simple-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/angus-mail-1.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.mail-api-2.1.3.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxrs-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.ws.rs-api-3.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-javascript-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-sts-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-json-basic-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-api-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-core-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-server-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-core-client-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jgroups-5.3.0.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-epoll-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-kqueue-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-proxy-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-socks-4.1.100.Final.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-client-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-selector-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-server-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/caffeine-3.1.6.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jdbc-store-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-dbcp2-2.7.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-pool2-2.7.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-quorum-api-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jctools-core-2.1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-beanutils-1.9.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-logging-1.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-configuration2-2.9.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/commons-collections-3.2.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-core-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-commons-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-observation-1.10.13.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-journal-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/activemq-artemis-native-2.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-commons-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-service-extensions-2.31.2.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-api-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-service-4.0.5.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jettison-1.5.4.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/asm-9.7.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/FastInfoset-2.1.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.ws-api-3.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.bind-api-3.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jws-api-3.0.0.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.soap-api-2.0.1.jar"/>
+        <pathelement location="../../../../usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-manifest.jar"/>
+        <path refid="Mssql Jdbc.userclasspath"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi/poi-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml/poi-ooxml-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-full/poi-ooxml-full-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-excelant/poi-excelant-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-scratchpad/poi-scratchpad-5.3.0.jar"/>
+        <pathelement location="../../Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-lite-agent/poi-ooxml-lite-agent-5.3.0.jar"/>
+        <pathelement location="../../Downloads/commons-io-2.17.0/commons-io-2.17.0.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-core-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-1.2-api-2.24.1.jar"/>
+        <pathelement location="../../Downloads/apache-log4j-2.24.1-bin/log4j-api-2.24.1.jar"/>
+    </path>
+    -->
+    <target name="init">
+        <mkdir dir="${dir.workspace}/bin"/>
+        <copy includeemptydirs="false" todir="${dir.workspace}/bin">
+            <fileset dir="${dir.workspace}/src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    	<!--
+        <copy includeemptydirs="false" todir="${dir.workspace}/bin">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="${dir.workspace}/src/"/>
+            </fileset>
+        </copy>
+        -->
+    </target>
+    <target name="clean">
+        <delete dir="${dir.workspace}/bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${dir.workspace}/bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="${dir.workspace}/src"/>
+            <src path="."/>
+            <exclude name="${dir.workspace}/src/"/>
+            <classpath refid="CruieseTraveler.classpath"/>
+            <bootclasspath>
+            	 <!--
+                <fileset dir="${java.home}/lib" includes="*.jar"/>
+                <fileset dir="${java.home}/lib/ext" includes="*.jar"/>
+                <path refid="Apache CXF.bootclasspath"/>
+                -->
+            </bootclasspath>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="CruieseTraveler">
+        <java classname="" failonerror="true" fork="yes">
+            <classpath refid="run.CruieseTraveler.classpath"/>
+        </java>
+    </target>
+  <!--
+    <target name="CruieseTraveler (1)">
+        <java classname="CruieseTraveler" failonerror="true" fork="yes">
+            <classpath refid="run.CruieseTraveler (1).classpath"/>
+        </java>
+    </target> -->
+   <target name="create_run_jar">
+    <jar destfile="${dir.workspace}/dist/CruieseTraveler.jar" filesetmanifest="mergewithoutmain">
+              	            <manifest>
+              	                <attribute name="Main-Class" value="CruieseTraveler"/>
+              	                <attribute name="Class-Path" value="."/>
+              	            </manifest>
+              	            <fileset dir="${dir.workspace}/bin"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-common-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/velocity-engine-core-2.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-lang3-3.14.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wsdl4j-1.6.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-xjc-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-core-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/txw2-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-runtime-4.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/xsom-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/relaxng-datatype-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/codemodel-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/rngom-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/dtd-parser-1.4.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/istack-commons-tools-3.0.12.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jaxb-runtime-3.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/woodstox-core-6.6.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/stax2-api-4.2.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-validator-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/xmlschema-core-2.3.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-core-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-wsdl-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-misctools-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-databinding-jaxb-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-corba-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/antlr-2.7.7.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jacorb-omgapi-3.9.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-jaxws-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/xml-resolver-1.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-text-1.10.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wsdlto-frontend-javascript-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-wadlto-jaxrs-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-service-description-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-tools-java2ws-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-dv-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.annotation-api-2.1.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.activation-api-2.1.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-ts-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-bug671-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-boolean-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-javadoc-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-xjc-runtime-4.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-core-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/angus-activation-2.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-features-clustering-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-management-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-local-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-jetty-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-server-11.0.22.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-jakarta-servlet-api-5.0.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-util-11.0.22.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-io-11.0.22.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-security-11.0.22.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jetty-http-11.0.22.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-api-2.0.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-hc-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-nio-4.4.16.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/httpcore-4.4.16.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/httpasyncclient-4.1.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/httpclient-4.5.14.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-codec-1.17.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-server-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-common-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-buffer-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-resolver-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-unix-common-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.servlet-api-5.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-http-netty-client-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-http2-4.1.111.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-udp-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/mina-core-2.2.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/slf4j-jdk14-2.0.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jcl-over-slf4j-2.0.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-transports-jms-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jms-api-3.1.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.transaction-api-2.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-soap-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-jaxb-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-xml-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-corba-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-bindings-coloc-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-databinding-aegis-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-providers-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-extension-search-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-cors-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-oauth2-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-jaxrs-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-client-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-xml-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-saml-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-dom-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-common-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/xmlsec-3.0.4.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-impl-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-core-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-profile-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-saml-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-security-impl-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-soap-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xmlsec-impl-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/metrics-core-4.2.26.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/java-support-8.4.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cryptacular-1.2.6.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/guava-32.1.2-jre.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/failureaccess-1.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-impl-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-impl-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/opensaml-xacml-saml-api-4.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jasypt-1.9.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-addr-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-rm-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-policy-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/neethi-3.2.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-mex-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-ws-security-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/ehcache-3.10.8-jakarta.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cache-api-1.1.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-policy-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-stax-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-bindings-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/saaj-impl-2.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/stax-ex-2.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/wss4j-ws-security-policy-stax-3.0.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxws-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-js-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/rhino-1.7.15.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-simple-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/angus-mail-1.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.mail-api-2.1.3.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-frontend-jaxrs-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.ws.rs-api-3.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-security-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-javascript-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-sts-core-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-security-jose-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-rt-rs-json-basic-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-api-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-wsn-core-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-server-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-core-client-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jgroups-5.3.0.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-epoll-4.1.100.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-transport-classes-kqueue-4.1.100.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-handler-proxy-4.1.100.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/netty-codec-socks-4.1.100.Final.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-client-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-selector-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-server-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/caffeine-3.1.6.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jdbc-store-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-dbcp2-2.7.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-pool2-2.7.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-quorum-api-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jctools-core-2.1.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-beanutils-1.9.4.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-logging-1.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-configuration2-2.9.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/commons-collections-3.2.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-core-1.10.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-commons-1.10.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/micrometer-observation-1.10.13.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-journal-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/activemq-artemis-native-2.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-commons-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/artemis-jakarta-service-extensions-2.31.2.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-api-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-services-ws-discovery-service-4.0.5.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jettison-1.5.4.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/asm-9.7.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/FastInfoset-2.1.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.ws-api-3.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.bind-api-3.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.jws-api-3.0.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/jakarta.xml.soap-api-2.0.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/apache-cxf-4.0.5/lib/cxf-manifest.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/usr/local/Cellar/sqljdbc_12.8/cht/jars/mssql-jdbc-12.8.1.jre8.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi/poi-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml/poi-ooxml-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-full/poi-ooxml-full-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-excelant/poi-excelant-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-scratchpad/poi-scratchpad-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-poi-src-5.3.0-20240625/build/dist/maven/poi-ooxml-lite-agent/poi-ooxml-lite-agent-5.3.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/commons-io-2.17.0/commons-io-2.17.0.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-core-2.24.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-1.2-api-2.24.1.jar"/>
+              	            <zipfileset excludes="META-INF/*.SF" src="/Users/cooper/Downloads/apache-log4j-2.24.1-bin/log4j-api-2.24.1.jar"/>
+              	        </jar>
+              	    </target>          	
+</project>
